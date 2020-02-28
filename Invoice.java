@@ -2,19 +2,20 @@
 /**
  * Write a description of class Invoice here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Marwah Zulfanny Alief)
+ * @version (27/02/2020)
  */
 public class Invoice
 {
-    // instance variables - replace the example below with your own
+    // instance variables 
     private int id;
     private int idFood;
     private String date;
     private int totalPrice;
     private Customer customer;
     /**
-     * Constructor for objects of class Invoice
+     * Constructor untuk objects dari class Invoice
+     * @param id, idFood, date, customer,totalPrice
      */
     public Invoice(int id, int idFood, String date, Customer customer, int totalPrice)
     {
@@ -26,17 +27,26 @@ public class Invoice
       this.totalPrice=totalPrice;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+   /**
+     *  methods yang terdapat pada Class Customer
+     * Untuk melakukan pemberian nilai dan pengambilan nilai value
+     * Pemberian nilai dengan setVariable()
+     * Pengambilan nilai dengan getVariable()
+     */
+    
+     /**
+     * untuk mengambil nilai dari variable id
+     * @return id
      */
     public int getId()
     {
         // put your code here
         return id;
     }
+    /**
+     * untuk mengambil nilai dari variable idFood
+     * @return idFood
+     */
     public int getIdFood()
     {
         return idFood;

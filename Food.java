@@ -2,8 +2,8 @@
 /**
  * Write a description of class Food here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Marwah Zulfanny Alief)
+ * @version (27/02/2020)
  */
 public class Food
 {
@@ -16,7 +16,8 @@ public class Food
    
 
     /**
-     * Constructor for objects of class Food
+     * Constructor untuk objects dari class Food
+     * @param id, name, seller, price, category
      */
     public Food(int id, String name, Seller seller, int price, String category)
     {
@@ -29,10 +30,15 @@ public class Food
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     *  methods yang terdapat pada Class Customer
+     * Untuk melakukan pemberian nilai dan pengambilan nilai value
+     * Pemberian nilai dengan setVariable()
+     * Pengambilan nilai dengan getVariable()
+     */
+    
+    /**
+     * untuk mengambil nilai dari variable id
+     * @return id
      */
     public int getID()
     {

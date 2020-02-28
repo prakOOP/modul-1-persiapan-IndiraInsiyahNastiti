@@ -2,8 +2,8 @@
 /**
  * Write a description of class Location here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Marwah Zulfanny Alief)
+ * @version (27/02/2020)
  */
 public class Location
 {
@@ -12,8 +12,9 @@ public class Location
     private String description;
     private String city;
 
-    /**
-     * Constructor for objects of class Location
+     /**
+     * Constructor untuk objects dari class Location
+     * @param city,province,description
      */
     public Location(String city, String province, String description)
     {
@@ -24,10 +25,15 @@ public class Location
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     *  methods yang terdapat pada Class Customer
+     * Untuk melakukan pemberian nilai dan pengambilan nilai value
+     * Pemberian nilai dengan setVariable()
+     * Pengambilan nilai dengan getVariable()
+     */
+    
+    /**
+     * untuk mengambil nilai dari variable province
+     * @return province
      */
     public String getProvince()
     {

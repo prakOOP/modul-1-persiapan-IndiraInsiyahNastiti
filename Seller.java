@@ -2,12 +2,12 @@
 /**
  * Write a description of class Seller here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Marwah Zulfanny Alief)
+ * @version (27/02/2020)
  */
 public class Seller
 {
-    // instance variables - replace the example below with your own
+    // instance variables 
     private int id;
     private String name;
     private String email;
@@ -15,7 +15,8 @@ public class Seller
     private Location location;
     
     /**
-     * Constructor for objects of class Seller
+     * Constructor untuk objects dari class Seller
+     * @param id, name, email, phoneNumber, Location
      */
     public Seller(int id, String name, String email, String phoneNumber, Location location)
     {
@@ -26,54 +27,97 @@ public class Seller
         this.phoneNumber=phoneNumber;
         this.location=location;
     }
-
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     *  methods yang terdapat pada Class Customer
+     * Untuk melakukan pemberian nilai dan pengambilan nilai value
+     * Pemberian nilai dengan setVariable()
+     * Pengambilan nilai dengan getVariable()
+     */
+    
+    /**
+     * untuk mengambil nilai dari variable id
+     * @return id
      */
     public int getId()
-    {
-        // put your code here
+    { 
         return id;
     }
+    /**
+     * untuk mengambil nilai dari variable name
+     * @return name
+     */
     public String getName()
     {
         return name;
     }
+    /**
+     * untuk mengambil nilai dari variable email
+     * @return email
+     */
     public String getEmail()
     {
         return email;
     }
+     /**
+     * untuk mengambil nilai dari variable phoneNumber
+     * @return phoneNumber
+     */
     public String getPhoneNumber()
     {
         return phoneNumber;
     }
+     /**
+     * untuk mengambil nilai dari variable location
+     * @return location
+     */
     public Location getLocation()
     {
         return location;
     }
+     /**
+     * untuk memberikan nilai pada variable id
+     * @params id
+     */
     public void setId(int id)
     {
         this.id=id;
     }
+    /**
+     * untuk memberikan nilai pada variable name
+     * @params name
+     */
     public void setName(String name)
     {
         this.name=name;
     }
+      /**
+     * untuk memberikan nilai pada variable email
+     * @params email
+     */
     public void setEmail(String email)
     {
         this.email=email;
     }
+      /**
+     * untuk memberikan nilai pada variable phoneNumber
+     * @params phoneNumber
+     */
     public void setPhoneNumber(String phoneNumber)
     {
         this.phoneNumber=phoneNumber;
     }
+      /**
+     * untuk memberikan nilai pada variable location
+     * @params location
+     */
     public void setLocation(Location location)
     {
         this.location=location;
     }
+    /**
+     * untuk menampilkan isi nilai variable name
+     * @params name
+     */
     public void printData()
     {
         System.out.println(name);

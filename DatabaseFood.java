@@ -2,8 +2,8 @@
 /**
  * Write a description of class DatabaseFood here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Marwah Zulfanny Alief)
+ * @version (27/02/2020)
  */
 public class DatabaseFood
 {
@@ -11,7 +11,8 @@ public class DatabaseFood
     private String[] listFood;
 
     /**
-     * Constructor for objects of class DatabaseFood
+     * Constructor untuk objects dari class DatabaseFood
+     *
      */
     public DatabaseFood()
     {
@@ -20,16 +21,25 @@ public class DatabaseFood
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     *  methods yang terdapat pada Class Customer
+     * Untuk melakukan pemberian nilai dan pengambilan nilai value
+     * Pemberian nilai dengan setVariable()
+     * Pengambilan nilai dengan getVariable()
+     */
+    
+    /**
+     * untuk menambahkan objek food
+     * @return true 
      */
     public boolean addFood(Food food)
     {
         // put your code here
         return true;
     }
+     /**
+     * untuk menghapus objek food
+     * @return true 
+     */
     public boolean removeFood(Food food)
     {
         // put your code here
