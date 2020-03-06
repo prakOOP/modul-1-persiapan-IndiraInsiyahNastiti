@@ -13,11 +13,13 @@ public class Invoice
     private String date;
     private int totalPrice;
     private Customer customer;
+    private PaymentType paymentType;
+    private InvoiceStatus status;
     /**
      * Constructor untuk objects dari class Invoice
      * @param id, idFood, date, customer,totalPrice
      */
-    public Invoice(int id, int idFood, String date, Customer customer, int totalPrice)
+    public Invoice(int id, int idFood, String date, Customer customer, int totalPrice, InvoiceStatus status)
     {
         // initialise instance variables
       this.id=id;
@@ -25,6 +27,7 @@ public class Invoice
       this.date=date;
       this.customer=customer;
       this.totalPrice=totalPrice;
+      this.status=status;
     }
 
    /**
@@ -63,6 +66,14 @@ public class Invoice
     {
         return customer;
     }
+    public PaymentType getPaymentType()
+    {
+        return paymentType;
+    }
+    public InvoiceStatus getInvoiceStatus()
+    {
+        return status;
+    }
     public void setId(int id)
     {
         this.id=id;
@@ -83,8 +94,22 @@ public class Invoice
     {
         this.customer=customer;
     }
+    public void setPaymentType(PaymentType paymentType)
+    {
+        this.paymentType=paymentType;
+    }
+    public void setInvoiceStatus(InvoiceStatus status)
+    {
+        this.status=status;
+    }
     public void printData()
     {
-        System.out.println(totalPrice);
+        System.out.println("================INVOICE===============");
+        System.out.println("ID:" + this.id);
+        System.out.println("Food ID:" + this.idFood);
+        System.out.println("Date:" + this.date);
+        System.out.println("Customer:" + customer.getName());
+        System.out.println("Total Price:" + this.totalPrice);
+        System.out.println("STatus:" + this.status);
     }
 }
