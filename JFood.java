@@ -77,8 +77,21 @@ public class JFood
         System.out.println("Invoice 3");
         cashlessinvoice3.printData();
         
+        //POST TEST MODUL 4
+        Customer customer7 = new Customer(7,"indira","indira@yahoo.com","igindigiraga","13/03/2020");
+        Food food8 = new Food(8,"Nasi Lemak", seller3, 60000,FoodCategory.Rice);
         
+        CashInvoice cashinvoice1 = new CashInvoice(1, food8, "20/03/2020", customer7, InvoiceStatus.Finished);
+        CashInvoice cashinvoice2 = new CashInvoice(2, food8, "20/03/2020", customer6, InvoiceStatus.Finished,10000);
         
+        cashinvoice1.setTotalPrice();
+        cashinvoice2.setTotalPrice();
+        
+        System.out.println("POST TEST MODUL 4");
+        System.out.println("Invoice 1");
+        cashinvoice1.printData();
+        System.out.println("Invoice 2");
+        cashinvoice2.printData();
         
         
         
