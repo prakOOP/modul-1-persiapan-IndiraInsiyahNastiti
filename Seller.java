@@ -118,8 +118,16 @@ public class Seller
      * untuk menampilkan isi nilai variable name
      * @params name
      */
-    public void printData()
+    public String toString()
     {
-        System.out.println(name);
+        
+        return "Id = " + this.id + "Nama = " + this.name  + "Phone Number =" + this.phoneNumber + "Location =" + this.location;
+       
     }
+    
+    /**public void printData()
+    *{
+    *    System.out.println(name);
+    *}
+    */
 }

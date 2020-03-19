@@ -77,14 +77,21 @@ public class Promo
     {
         this.active=active;
     }
-    public void printData()
+    public String toString()
     {
-        System.out.println("ID:" + this.id);
-        System.out.println("Code:" + this.code);
-        System.out.println("Discount:" + this.discount);
-        System.out.println("Minimum Price:" + this.minPrice);
-        System.out.println("Status:" + this.active);
+        
+        return "Id = " + this.id + "Code = " + this.code  + "Discount =" + this.discount + "MinPrice =" + this.minPrice + "Active Status =" + this.active;
+       
     }
+    /**public void printData()
+    *{
+    *    System.out.println("ID:" + this.id);
+    *    System.out.println("Code:" + this.code);
+    *    System.out.println("Discount:" + this.discount);
+    *    System.out.println("Minimum Price:" + this.minPrice);
+    *    System.out.println("Status:" + this.active);
+    *}
+    */
     
     
     

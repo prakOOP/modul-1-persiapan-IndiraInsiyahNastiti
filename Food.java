@@ -90,16 +90,23 @@ public class Food
     {
         this.category=category;
     }
-    
-    public void printData()
+    public String toString()
     {
-        System.out.println("================FOOD================");
-        System.out.println("ID:" + this.id);
-        System.out.println("Name:" + this.name);
-        System.out.println("Seller:" + seller.getName());
-        System.out.println("City:" + (seller.getLocation()).getCity());
-        System.out.println("Price:" + this.price);
-        System.out.println("Catgeory:" + this.category);
         
+        return "Id = " + this.id + "Nama = " + this.name  + "Seller =" + seller.getName() + "City =" + seller.getLocation().getCity() + "Price=" + this.price + "Category =" + this.category;
+       
     }
+     
+    /**public void printData()
+    *{
+    *   System.out.println("================FOOD================");
+    *    System.out.println("ID:" + this.id);
+    *    System.out.println("Name:" + this.name);
+    *    System.out.println("Seller:" + seller.getName());
+    *    System.out.println("City:" + (seller.getLocation()).getCity());
+    *    System.out.println("Price:" + this.price);
+    *    System.out.println("Catgeory:" + this.category);
+        
+    *}
+    */
 }

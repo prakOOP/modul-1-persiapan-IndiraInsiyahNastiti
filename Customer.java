@@ -1,3 +1,6 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.regex.*;
 
 /**
  * Write a description of class Customer here.
@@ -13,13 +16,14 @@ public class Customer
     private String name;
     private String email;
     private String password;
-    private String joinDate;
+    private Calendar joinDate;
+    
 
     /**
      * Constructor untuk objects dari class Customer
      * @param id, name, email, password, joinDate
      */
-    public Customer(int id, String name, String email, String password, String joinDate)
+    public Customer(int id, String name, String email, String password, Calendar joinDate)
     {
         // initialise instance variables
        this.id=id;
@@ -27,6 +31,23 @@ public class Customer
        this.email=email;
        this.password=password;
        this.joinDate=joinDate;
+    }
+    public Customer(int id, String name, String email, String password, int year, int month, int dayOfMonth)
+    {
+        // initialise instance variables
+       this.id=id;
+       this.name=name;
+       this.email=email;
+       this.password=password;
+       this.joinDate = new GregorianCalendar(year, month-1, dayOfMonth);
+    }
+    public Customer(int id, String name, String email, String password)
+    {
+        // initialise instance variables
+       this.id=id;
+       this.name=name;
+       this.email=email;
+       this.password=password;
     }
 
     /**
@@ -73,7 +94,7 @@ public class Customer
      * untuk mengambil nilai dari variable joinDate
      * @return joinDate
      */
-     public String getJoinDate()
+     public Calendar getJoinDate()
     {
         return joinDate;
     }
@@ -99,7 +120,13 @@ public class Customer
      */
     public void setEmail(String email)
     {
-        this.email=email;
+      
+        String pattern =  "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+        
+         
     }
     /**
      * untuk memberikan nilai pada variable password
@@ -107,24 +134,29 @@ public class Customer
      */
     public void setPassword(String password)
     {
-        this.password=password;
+        String pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$";
     }
     /**
      * untuk memberikan nilai pada variable joinDate
      * @params joinDate
      */
-    public void setJoinDate(String joinDate)
+    public void setJoinDate(Calendar joinDate)
     {
         this.joinDate=joinDate;
+    }
+    public void setJoinDate(int year, int month, int dayOfMonth)
+    {
+        this.joinDate=new GregorianCalendar(year, month-1, dayOfMonth);
     }
     /**
      * untuk menampilkan isi nilai variable name
      * @params name
      */
-    public void printData()
+    public String toString()
     {
         
-        System.out.println(name);
+        return "Id = " + this.id + "Nama = " + this.name  + "Email =" + this.email + "Password =" + this.password + "Join Date =" + this.joinDate;
+       
     }
     
     

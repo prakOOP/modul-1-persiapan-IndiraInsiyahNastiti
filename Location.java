@@ -65,8 +65,15 @@ public class Location
         // put your code here
         this.description=description;
     }
-    public void printData()
+    public String toString()
     {
-       System.out.println(province);
+        
+        return "Province = " + this.province + "City = " + this.city  + "Description =" + this.description;
+       
     }
+    /**public void printData()
+    *{
+    *   System.out.println(province);
+    *}
+    **/
 }
