@@ -1,4 +1,7 @@
-
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.*;
+import java.text.*;
 /**
  * Write a description of class Invoice here.
  *
@@ -10,7 +13,7 @@ public abstract class Invoice
     // instance variables 
     private int id;
     private Food food;
-    private String date;
+    private Calendar date;
     protected int totalPrice;
     private Customer customer;
     private InvoiceStatus invoiceStatus;
@@ -18,12 +21,12 @@ public abstract class Invoice
      * Constructor untuk objects dari class Invoice
      * @param id, idFood, date, customer,totalPrice
      */
-    public Invoice(int id,Food food, String date, Customer customer, InvoiceStatus invoiceStatus)
+    public Invoice(int id,Food food, Calendar date, Customer customer, InvoiceStatus invoiceStatus)
     {
         // initialise instance variables
       this.id=id;
       this.food=food;
-      this.date=date;
+      getDate().getTime();
       this.customer=customer;
       this.invoiceStatus=invoiceStatus;
     }
@@ -52,7 +55,7 @@ public abstract class Invoice
     {
         return food;
     }
-    public String getDate()
+    public Calendar getDate()
     {
         return date;
     }
@@ -77,10 +80,14 @@ public abstract class Invoice
     {
         this.food=food;
     }
-    public void setDate(String date)
+    public Calendar setDate(Calendar date)
     {
         this.date=date;
     }
+    public Calendar setDate(int year, int month, int dayOfMonth)
+    {
+         this.date=new GregorianCalendar(year, month-1, dayOfMonth);
+        }
     public abstract void setTotalPrice();
     public void setCustomer(Customer customer)
     {
@@ -90,5 +97,5 @@ public abstract class Invoice
     {
         this.invoiceStatus=invoiceStatus;
     }
-    public abstract void printData();
+    public abstract String toString();
 }

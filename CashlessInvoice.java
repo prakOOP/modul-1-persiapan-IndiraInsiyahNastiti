@@ -14,16 +14,16 @@ public class CashlessInvoice extends Invoice
     /**
      * Constructor for objects of class CashlessInvoice
      */
-    public CashlessInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus)
+    public CashlessInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus)
     {
         // initialise instance variables
-        super(id,food,date,customer,invoiceStatus);
+        super(id,food,customer,invoiceStatus);
         
     }
-    public CashlessInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus, Promo promo)
+    public CashlessInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus, Promo promo)
     {
         // initialise instance variables
-        super(id,food,date,customer,invoiceStatus);
+        super(id,food,customer,invoiceStatus);
         this.promo=promo;
     }
 
@@ -56,7 +56,18 @@ public class CashlessInvoice extends Invoice
             this.totalPrice=(getFood().getPrice());
         }
     }
-    public void printData()
+    public String toString()
+    {
+           
+       
+           return"ID:  "+getId()+"\nFood:: "+(getFood().getName())+"Customer:"+(getCustomer().getName())
+           +"\nDelivery Fee:"+this.deliveryFee+"\nTotal Price:"+this.totalPrice + "\nStatus:"+getInvoiceStatus()+
+           "Status:"+getInvoiceStatus()+"Payment Type:" + PAYMENT_TYPE;
+    
+       
+       
+    }
+    /**public void printData()
     {
         
         if(promo!=null && promo.getActive()==true && (getFood().getPrice()) >= promo.getMinPrice())
@@ -85,7 +96,7 @@ public class CashlessInvoice extends Invoice
            System.out.println("Payment Type:"+PAYMENT_TYPE);
         }
             
+    **/}
     }
     
     
-}

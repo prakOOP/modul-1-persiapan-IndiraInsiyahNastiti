@@ -1,4 +1,4 @@
-
+import java.util.Calendar;
 /**
  * Write a description of class CashlessInvoice here.
  *
@@ -14,16 +14,16 @@ public class CashInvoice extends Invoice
     /**
      * Constructor for objects of class CashlessInvoice
      */
-    public CashInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus)
+    public CashInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus)
     {
         // initialise instance variables
-        super(id,food,date,customer,invoiceStatus);
+        super(id,food,customer,invoiceStatus);
         
     }
-    public CashInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus, int deliveryFee)
+    public CashInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus, int deliveryFee)
     {
         // initialise instance variables
-        super(id,food,date,customer,invoiceStatus);
+        super(id,food,customer,invoiceStatus);
         this.deliveryFee=deliveryFee;
     }
 
@@ -56,26 +56,36 @@ public class CashInvoice extends Invoice
             this.totalPrice=(getFood().getPrice());
         }
     }
-    public void printData()
+    public String toString()
     {
-        
-        if(deliveryFee!=0)
-        {
-           System.out.println("ID:"+ getId());
-           System.out.println("Food:"+ (getFood().getName()));
-           System.out.println("Date:"+getDate());
-           System.out.println("Customer:"+(getCustomer().getName()));
-           System.out.println("Delivery Fee:"+this.deliveryFee);
-           System.out.println("Total Price:"+this.totalPrice);
-           System.out.println("Status:"+getInvoiceStatus());
-           System.out.println("Payment Type:"+PAYMENT_TYPE);
+       
+           return"ID:  "+getId()+"\nFood:: "+(getFood().getName())+"\nDate:"+getDate()+"Customer:"+(getCustomer().getName())
+           +"\nDelivery Fee:"+this.deliveryFee+"\nTotal Price:"+this.totalPrice + "\nStatus:"+getInvoiceStatus()+
+           "Status:"+getInvoiceStatus()+"Payment Type:" + PAYMENT_TYPE;
+    
+       
+       
+    }
+    /**public void printData()
+    *{
+    *    
+   *     if(deliveryFee!=0)
+    *    {
+    *       System.out.println("ID:"+ getId());
+    *       System.out.println("Food:"+ (getFood().getName()));
+    *       System.out.println("Date:"+getDate());
+    *       System.out.println("Customer:"+(getCustomer().getName()));
+     *      System.out.println("Delivery Fee:"+this.deliveryFee);
+     *      System.out.println("Total Price:"+this.totalPrice);
+    *       System.out.println("Status:"+getInvoiceStatus());
+    *       System.out.println("Payment Type:"+PAYMENT_TYPE);
            
            
-        }
-        else
-        {
-           System.out.println("ID:"+ getId());
-           System.out.println("Food:"+ (getFood().getName()));
+     *   }
+    *    else
+     *   {
+     *      System.out.println("ID:"+ getId());
+     *      System.out.println("Food:"+ (getFood().getName()));
            System.out.println("Date:"+getDate());
            System.out.println("Customer:"+(getCustomer().getName()));
            System.out.println("Total Price:"+this.totalPrice);
@@ -84,6 +94,6 @@ public class CashInvoice extends Invoice
         }
             
     }
-    
+    **/
     
 }

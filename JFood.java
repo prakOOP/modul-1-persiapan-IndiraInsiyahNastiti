@@ -81,8 +81,7 @@ public class JFood
         //Customer customer7 = new Customer(7,"indira","indira@yahoo.com","igindigiraga","13/03/2020");
         Food food8 = new Food(8,"Nasi Lemak", seller3, 60000,FoodCategory.Rice);
         
-        //CashInvoice cashinvoice1 = new CashInvoice(1, food8, "20/03/2020", customer7, InvoiceStatus.Finished);
-        //CashInvoice cashinvoice2 = new CashInvoice(2, food8, "20/03/2020", customer6, InvoiceStatus.Finished,10000);
+        
         
         //cashinvoice1.setTotalPrice();
         //cashinvoice2.setTotalPrice();
@@ -109,6 +108,10 @@ public class JFood
         customer1.setPassword("apalaH1");
         
         System.out.println(customer1.toString());
+        
+        System.out.println("POST TES MODUL 5");
+        CashInvoice cashinvoice1 = new CashInvoice(1, food8, customer1, InvoiceStatus.Finished);
+        CashInvoice cashinvoice2 = new CashInvoice(2, food8, customer2, InvoiceStatus.Finished,10000);
         
     }
 }
