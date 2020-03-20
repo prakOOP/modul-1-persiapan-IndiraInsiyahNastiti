@@ -99,12 +99,7 @@ public class JFood
         Customer customer1 = new Customer(1, "marwah", ".etd@ui.ac.id", "apalah",tanggal );
         Customer customer2 = new Customer(2, "fanny", "etd@ui.ac.id", "Apalah1", 2020, 3, 19);
         Customer customer3 = new Customer(3, "alief", "fanny.alief@gmail.com","yayayA3");
-        customer1.setEmail(".etd@ui.ac.id");
-        customer2.setEmail("etd@ui.ac.id");
-        customer3.setEmail("fanny.alief@gmail.com");
-        customer1.setPassword("apalah");
-        customer2.setPassword("Apalah1");
-        customer2.setPassword("yayayA3");
+        
         
         System.out.println(customer1.toString());
         System.out.println(customer2.toString());

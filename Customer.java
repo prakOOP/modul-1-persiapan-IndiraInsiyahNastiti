@@ -30,8 +30,8 @@ public class Customer
         // initialise instance variables
        this.id=id;
        this.name=name;
-       this.email=email;
-       this.password=password;
+       setEmail(email);
+       setPassword(password);
        this.joinDate=joinDate;
     }
     public Customer(int id, String name, String email, String password, int year, int month, int dayOfMonth)
@@ -39,8 +39,8 @@ public class Customer
         // initialise instance variables
        this.id=id;
        this.name=name;
-       this.email=email;
-       this.password=password;
+       setEmail(email);
+       setPassword(password);
        this.joinDate = new GregorianCalendar(year,month,dayOfMonth);
     }
     public Customer(int id, String name, String email, String password)
@@ -48,8 +48,8 @@ public class Customer
         // initialise instance variables
        this.id=id;
        this.name=name;
-       this.email=email;
-       this.password=password;
+       setEmail(email);
+       setPassword(password);
     }
 
     /**
