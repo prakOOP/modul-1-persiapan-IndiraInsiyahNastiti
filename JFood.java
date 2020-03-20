@@ -1,4 +1,4 @@
-
+import java.util.Calendar;
 /**
  * 
  *
@@ -17,7 +17,7 @@ public class JFood
     public static void main(String[] args)
     {
         // CS MODUL 2
-        System.out.println("CS MODUL 2");
+        //System.out.println("CS MODUL 2");
         Location location1 = new Location("Bogor","Jawa Barat","hujan"); //membuat objek location1 dari class Location
         Seller seller1 =new Seller(1,"nadhila","nadhila@gmail.com","0897283627",location1); //membuat objek seller1 dari class Seller
         Food food1 = new Food(1,"Pisang",seller1,10000,FoodCategory.Beverages); //membuat objek food1 dari class Food
@@ -28,24 +28,24 @@ public class JFood
         //seller1.printData();
         //customer1.printData();
         //POST TEST MODUL 2
-        System.out.println("POST TEST MODUL 2");
+        //System.out.println("POST TEST MODUL 2");
         Location location2 = new Location("Bekasi","Jawa Barat","macet");
         Seller seller2 = new Seller(2, "Marwah Zulfanny","marwah.zulfanny@ui.ac.id","087885310908",location2);
         Food food2 = new Food(2,"mangga", seller2, 5000,FoodCategory.Beverages);
         //Customer customer2 = new Customer(2,"fakhira","fakhira.nadhila@yahoo.com","qwetyuip","28/02/2020");
         //Invoice invoice2 =new Invoice(2,2,"28/02/2020",customer2,5000,InvoiceStatus.Finished);
-        System.out.println(seller2.getName());
+        //System.out.println(seller2.getName());
         seller2.setName("Alwi");
-        System.out.println(seller2.getName());
+        //System.out.println(seller2.getName());
         //food2.printData();
         //CS MODUL 3
-        System.out.println("CS MODUL 3");
+        //System.out.println("CS MODUL 3");
         Location location3 = new Location("Padang","Sumatera Barat","Makanan");
         Seller seller3 = new Seller(3, "Marwah Zulfanny","marwahzulfanny@gmail","0826762715445",location3);
         Food food3 = new Food(3,"americano", seller3, 50000,FoodCategory.Coffee);
         //food3.printData();
         //POST TEST MODUL 3
-        System.out.println("POST TEST MODUL 3");
+        //System.out.println("POST TEST MODUL 3");
         Food food4 = new Food(4,"Nasi Goreng", seller3, 50000,FoodCategory.Rice);
         //Customer customer3 = new Customer(3,"milo","milo@yahoo.com","dgudsjhs","06/03/2020");
         //Invoice invoice3 =new Invoice(3,food4.getID(),"06/03/2020",customer3,food4.getPrice(),InvoiceStatus.Finished);
@@ -69,12 +69,12 @@ public class JFood
         //cashlessinvoice2.setTotalPrice();
         //cashlessinvoice3.setTotalPrice();
         
-        System.out.println("CS MODUL 4");
-        System.out.println("Invoice 1");
+        //System.out.println("CS MODUL 4");
+        //System.out.println("Invoice 1");
         //cashlessinvoice1.printData();
-        System.out.println("Invoice 2");
+        //System.out.println("Invoice 2");
         //cashlessinvoice2.printData();
-        System.out.println("Invoice 3");
+        //System.out.println("Invoice 3");
         //cashlessinvoice3.printData();
         
         //POST TEST MODUL 4
@@ -87,16 +87,33 @@ public class JFood
         //cashinvoice1.setTotalPrice();
         //cashinvoice2.setTotalPrice();
         
-        System.out.println("POST TEST MODUL 4");
-        System.out.println("Invoice 1");
+        //System.out.println("POST TEST MODUL 4");
+        //System.out.println("Invoice 1");
         //cashinvoice1.printData();
-        System.out.println("Invoice 2");
+        //System.out.println("Invoice 2");
         //cashinvoice2.printData();
         
         System.out.println("CS MODUL 5");
+        Calendar tanggal = Calendar.getInstance();
+       
+        Customer customer1 = new Customer(1, "marwah", ".etd@ui.ac.id", "apalah",tanggal );
         Customer customer2 = new Customer(2, "fanny", "etd@ui.ac.id", "Apalah1", 2020, 3, 19);
-        System.out.println(customer2.toString());
+        Customer customer3 = new Customer(3, "alief", "fanny.alief@gmail.com","yayayA3");
+        customer1.setEmail(".etd@ui.ac.id");
+        customer2.setEmail("etd@ui.ac.id");
+        customer3.setEmail("fanny.alief@gmail.com");
+        customer1.setPassword("apalah");
+        customer2.setPassword("Apalah1");
+        customer2.setPassword("yayayA3");
         
+        System.out.println(customer1.toString());
+        System.out.println(customer2.toString());
+        System.out.println(customer3.toString());
+        
+        customer1.setEmail("et.d@ui.ac.id");
+        customer1.setPassword("apalaH1");
+        
+        System.out.println(customer1.toString());
         
     }
 }

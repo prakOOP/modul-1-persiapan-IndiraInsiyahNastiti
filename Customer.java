@@ -1,6 +1,8 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.*;
+import java.util.*;
+import java.text.*;
 
 /**
  * Write a description of class Customer here.
@@ -39,7 +41,7 @@ public class Customer
        this.name=name;
        this.email=email;
        this.password=password;
-       this.joinDate = new GregorianCalendar(year, month-1, dayOfMonth);
+       this.joinDate = new GregorianCalendar(year,month,dayOfMonth);
     }
     public Customer(int id, String name, String email, String password)
     {
@@ -125,7 +127,16 @@ public class Customer
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
                 "A-Z]{2,7}$";
-        
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(email);
+        if(m.matches())
+        {
+            this.email = email;
+        }
+        else
+        {
+            this.email ="";
+        }
          
     }
     /**
@@ -135,6 +146,16 @@ public class Customer
     public void setPassword(String password)
     {
         String pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$";
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(password);
+        if(m.matches())
+        {
+            this.password = password;
+        }
+        else
+        {
+            this.password ="";
+        }
     }
     /**
      * untuk memberikan nilai pada variable joinDate
@@ -152,12 +173,23 @@ public class Customer
      * untuk menampilkan isi nilai variable name
      * @params name
      */
-    public String toString()
+   
+        public String toString()
     {
-        
-        return "Id = " + this.id + "Nama = " + this.name  + "Email =" + this.email + "Password =" + this.password + "Join Date =" + this.joinDate;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
+       if(joinDate == null)
+       {
+           return"ID:  "+this.id+"\nName: "+this.name+"\nEmail: "+this.email+"\nPassword: "+this.password+"\n";
+    
+       }
        
+       else
+       {    
+           return"ID:  "+this.id+"\nName: "+this.name+"\nEmail: "+this.email+"\nPassword: "+this.password+"\nDate: "+
+           sdf.format(getJoinDate().getTime());
+       }
     }
+    
     
     
     
