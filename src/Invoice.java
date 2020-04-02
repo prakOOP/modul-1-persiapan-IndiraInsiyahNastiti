@@ -12,7 +12,8 @@ public abstract class Invoice
 {
     // instance variables 
     private int id;
-    private Food food;
+   // private Food food;
+    private ArrayList<Food> foods = new ArrayList();
     private Calendar date;
     protected int totalPrice;
     private Customer customer;
@@ -21,14 +22,14 @@ public abstract class Invoice
      * Constructor untuk objects dari class Invoice
      * @param id, idFood, date, customer,totalPrice
      */
-    public Invoice(int id,Food food, Customer customer, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Food> foods, Customer customer)
     {
         // initialise instance variables
       this.id=id;
-      this.food=food;
+      this.foods = foods;
       this.customer=customer;
-      this.invoiceStatus=invoiceStatus;
-      date = setDate(Calendar.getInstance());
+      this.invoiceStatus=invoiceStatus.Ongoing;
+      this.date = setDate(Calendar.getInstance());
     }
 
    /**
@@ -51,9 +52,9 @@ public abstract class Invoice
      * untuk mengambil nilai dari variable idFood
      * @return idFood
      */
-    public Food getFood()
+    public ArrayList<Food> getFoods()
     {
-        return food;
+        return foods;
     }
     public Calendar getDate()
     {
@@ -76,9 +77,9 @@ public abstract class Invoice
     {
         this.id=id;
     }
-    public void setFoods(Food food)
+    public void setFoods(ArrayList<Food> foods)
     {
-        this.food=food;
+        this.foods=foods;
     }
     public Calendar setDate(Calendar date)
     {
@@ -94,9 +95,9 @@ public abstract class Invoice
     {
         this.customer=customer;
     }
-    public void setInvoiceStatus(InvoiceStatus status)
+    /**public void setInvoiceStatus(InvoiceStatus status)
     {
         this.invoiceStatus=invoiceStatus;
-    }
+    }**/
     public abstract String toString();
 }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 /**
  * Write a description of class CashlessInvoice here.
@@ -14,16 +15,16 @@ public class CashInvoice extends Invoice
     /**
      * Constructor for objects of class CashlessInvoice
      */
-    public CashInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus)
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer)
     {
         // initialise instance variables
-        super(id,food,customer,invoiceStatus);
+        super(id,foods,customer);
         
     }
-    public CashInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus, int deliveryFee)
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, int deliveryFee)
     {
         // initialise instance variables
-        super(id,food,customer,invoiceStatus);
+        super(id,foods,customer);
         this.deliveryFee=deliveryFee;
     }
 
@@ -49,11 +50,11 @@ public class CashInvoice extends Invoice
     {
         if(deliveryFee!=0)
         {
-           this.totalPrice=(getFood().getPrice())+this.deliveryFee;
+           this.totalPrice=totalPrice+this.deliveryFee;
         }
         else
         {
-            this.totalPrice=(getFood().getPrice());
+            this.totalPrice=totalPrice;
         }
     }
     public String toString()
@@ -63,7 +64,7 @@ public class CashInvoice extends Invoice
           
            return"=============INVOIVE================"+
            "ID:  "+getId()+
-           "\nFood:: "+getFood().getName()+
+           "\nFood:: "+getFoods()+
            
            "\nCustomer:"+getCustomer().getName()+
            "\nTotal Price:"+getTotalPrice()+

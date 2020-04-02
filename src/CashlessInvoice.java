@@ -18,16 +18,16 @@ public class CashlessInvoice extends Invoice
     /**
      * Constructor for objects of class CashlessInvoice
      */
-    public CashlessInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus)
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer)
     {
         // initialise instance variables
-        super(id,food,customer,invoiceStatus);
+        super(id,foods,customer);
         
     }
-    public CashlessInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus, Promo promo)
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus, Promo promo)
     {
         // initialise instance variables
-        super(id,food,customer,invoiceStatus);
+        super(id,foods,customer);
         this.promo=promo;
     }
 
@@ -51,13 +51,13 @@ public class CashlessInvoice extends Invoice
     }
     public void setTotalPrice()
     {
-        if(promo!=null && promo.getActive()==true && (getFood().getPrice()) > promo.getMinPrice())
+        if(promo!=null && promo.getActive()==true && totalPrice > promo.getMinPrice())
         {
-           this.totalPrice=(getFood().getPrice())-promo.getDiscount();
+           this.totalPrice=totalPrice-promo.getDiscount();
         }
         else
         {
-            this.totalPrice=(getFood().getPrice());
+            this.totalPrice=totalPrice;
         }
     }
     public String toString()
@@ -68,7 +68,7 @@ public class CashlessInvoice extends Invoice
             
            return"=============INVOIVE================"+
            "ID:  "+getId()+
-           "\nFood:: "+getFood().getName()+
+           "\nFood:: "+getFoods()+
            "\nDate:"+format.format(getDate().getTime())+
            "\nCustomer:"+getCustomer().getName()+
            "\nTotal Price:"+getTotalPrice()+

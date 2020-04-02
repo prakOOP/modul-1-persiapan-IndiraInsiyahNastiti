@@ -40,7 +40,7 @@ public class Food
      * untuk mengambil nilai dari variable id
      * @return id
      */
-    public int getID()
+    public int getId()
     {
         // put your code here
         return id;

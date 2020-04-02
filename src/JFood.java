@@ -29,8 +29,8 @@ public class JFood
         //customer1.printData();
         //POST TEST MODUL 2
         //System.out.println("POST TEST MODUL 2");
-        Location location2 = new Location("Bekasi","Jawa Barat","macet");
-        Seller seller2 = new Seller(2, "Marwah Zulfanny","marwah.zulfanny@ui.ac.id","087885310908",location2);
+       // Location location2 = new Location("Bekasi","Jawa Barat","macet");
+        Seller seller2 = new Seller(2, "Marwah Zulfanny","marwah.zulfanny@ui.ac.id","087885310908",location1);
         Food food2 = new Food(2,"mangga", seller2, 5000,FoodCategory.Beverages);
         //Customer customer2 = new Customer(2,"fakhira","fakhira.nadhila@yahoo.com","qwetyuip","28/02/2020");
         //Invoice invoice2 =new Invoice(2,2,"28/02/2020",customer2,5000,InvoiceStatus.Finished);
@@ -109,10 +109,23 @@ public class JFood
         
         System.out.println(customer1.toString());
         
-        System.out.println("POST TES MODUL 5");
-        CashlessInvoice cashlessinvoice1 = new CashlessInvoice(1, food8, customer1, InvoiceStatus.Finished);
-        CashInvoice cashinvoice2 = new CashInvoice(2, food8, customer2, InvoiceStatus.Finished,10000);
-        System.out.println(cashlessinvoice1.toString());
-        System.out.println(cashinvoice2.toString());
+       // System.out.println("POST TES MODUL 5");
+       // CashlessInvoice cashlessinvoice1 = new CashlessInvoice(1, food8, customer1, InvoiceStatus.Finished);
+        //CashInvoice cashinvoice2 = new CashInvoice(2, food8, customer2, InvoiceStatus.Finished,10000);
+        //System.out.println(cashlessinvoice1.toString());
+        //System.out.println(cashinvoice2.toString());
+
+        System.out.println("CASE STUDY MODUL 6");
+        DatabaseSeller.addSeller(new Seller(4,"manda","manda@gmail.com","087383846837",location1));
+        DatabaseCustomer.addCustomer(new Customer(4, "fanny", "fanny@gmail.com", "naan123"));
+        DatabaseCustomer.addCustomer(new Customer(5, "fanny", "fanny@gmail.com", "nana123"));
+        DatabaseCustomer.addCustomer(new Customer(6, "Alwi", "alwi@gmail.com", "alwi123"));
+        System.out.println(DatabaseCustomer.getCustomerDatabase());
+        DatabaseFood.addFood(new Food(9,"nasi ijo",DatabaseSeller.getSellerById(9),50000,FoodCategory.Rice));
+        DatabaseFood.addFood(new Food(10,"nasi merah",DatabaseSeller.getSellerById(10),50000,FoodCategory.Rice));
+        DatabaseFood.addFood(new Food(11,"kopi item",DatabaseSeller.getSellerById(11),50000,FoodCategory.Coffee));
+        System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Rice));
+        System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Coffee));
+
     }
 }
