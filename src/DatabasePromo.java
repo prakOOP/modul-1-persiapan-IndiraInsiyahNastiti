@@ -32,7 +32,7 @@ public class DatabasePromo
     public  static Promo getPromoByCode(String code)
     {
         for(Promo promo : PROMO_DATABASE){
-            if (promo.getCode() == code){
+            if (promo.getCode().equals(code)){
                 return promo;
             }
         }
@@ -40,6 +40,11 @@ public class DatabasePromo
     }
     public static boolean addPromo(Promo promo)
     {
+        for (Promo _promo : PROMO_DATABASE) {
+            if (_promo.getCode().equals(promo.getCode())){
+                return false;
+            }
+        }
         PROMO_DATABASE.add(promo);
         lastId = promo.getId();
         return true;
@@ -58,7 +63,7 @@ public class DatabasePromo
     {
         for(Promo promo : PROMO_DATABASE){
             if (promo.getId() == id){
-                promo.setActive(true);
+                promo.setActive(false);
                 return true;
             }
         }

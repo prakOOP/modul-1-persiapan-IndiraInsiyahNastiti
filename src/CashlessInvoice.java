@@ -34,7 +34,7 @@ public class CashlessInvoice extends Invoice
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
+     * @param    a sample parameter for a method
      * @return    the sum of x and y
      */
     public PaymentType getPaymentType()
@@ -49,41 +49,39 @@ public class CashlessInvoice extends Invoice
     {
         this.promo=promo;
     }
-    public void setTotalPrice()
-    {
-        if(promo!=null && promo.getActive()==true && totalPrice > promo.getMinPrice())
-        {
-           this.totalPrice=totalPrice-promo.getDiscount();
+    public void setTotalPrice(){
+        if (promo!=null && promo.getActive()==true && (totalPrice)>promo.getMinPrice()){
+            this.totalPrice=totalPrice-promo.getDiscount();
         }
-        else
-        {
+        else{
             this.totalPrice=totalPrice;
         }
+
     }
-    public String toString()
-    {
-           
-            SimpleDateFormat format = new SimpleDateFormat("dd MMMM yyyy");
-            Date date = new Date();
-            
-           return"=============INVOIVE================"+
-           "ID:  "+getId()+
-           "\nFood:: "+getFoods()+
-           "\nDate:"+format.format(getDate().getTime())+
-           "\nCustomer:"+getCustomer().getName()+
-           "\nTotal Price:"+getTotalPrice()+
-           //"\nDelivery Fee:"+this.deliveryFee+"\nTotal Price:"+this.totalPrice + "\nStatus:"+getInvoiceStatus()+
-           "\nStatus:"+getInvoiceStatus()+
-           "\nPayment Type:" + getPaymentType();
-           //"\n==PROMO==\n"+
-           //"\nCode:"+promo.getCode()+
-           //"\nDiscount:"+promo.getDiscount()+
-           //"\nMinimum Price: "+ promo.getMinPrice()+
-           //"\n"
-           
-        
-       
-       
+    public String toString(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
+        Date date = new Date();
+        String foods = "";
+        String months[] = {"","Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+        if(promo!=null && promo.getActive()==true && totalPrice>promo.getMinPrice()){
+            return "Id:  "+getId()+
+                    "\nFood: "+ foods +
+                    "\nDate: "+ sdf.format(getDate().getTime())+
+                    "\nCustomer: "+getCustomer().getName()+
+                    "\nPromo: "+ promo.getCode()+
+                    "\nTotal Price: " + this.totalPrice +
+                    "\nStatus: " + getInvoiceStatus() +
+                    "\nPayment Type: " + PAYMENT_TYPE;
+        }
+        else{
+            return "Id:  "+getId()+
+                    "\nFood: "+ foods +
+                    "\nDate: "+ sdf.format(getDate().getTime())+
+                    "\nCustomer: "+getCustomer().getName()+
+                    "\nTotal Price: " + this.totalPrice +
+                    "\nStatus: " + getInvoiceStatus() +
+                    "\nPayment Type: " + PAYMENT_TYPE;
+        }
     }
     /**public void printData()
     {

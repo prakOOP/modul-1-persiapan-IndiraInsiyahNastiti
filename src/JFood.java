@@ -1,4 +1,6 @@
 import java.util.Calendar;
+import java.util.zip.DeflaterOutputStream;
+
 /**
  * 
  *
@@ -117,15 +119,19 @@ public class JFood
 
         System.out.println("CASE STUDY MODUL 6");
         DatabaseSeller.addSeller(new Seller(4,"manda","manda@gmail.com","087383846837",location1));
-        DatabaseCustomer.addCustomer(new Customer(4, "fanny", "fanny@gmail.com", "naan123"));
-        DatabaseCustomer.addCustomer(new Customer(5, "fanny", "fanny@gmail.com", "nana123"));
-        DatabaseCustomer.addCustomer(new Customer(6, "Alwi", "alwi@gmail.com", "alwi123"));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId(), "marw", "marw@gmail.com", "apalaH12"));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId(), "marw", "marw@gmail.com", "apalaH13"));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId(), "dhil", "dhil@gmail.com", "apalaH14"));
         System.out.println(DatabaseCustomer.getCustomerDatabase());
-        DatabaseFood.addFood(new Food(9,"nasi ijo",DatabaseSeller.getSellerById(9),50000,FoodCategory.Rice));
-        DatabaseFood.addFood(new Food(10,"nasi merah",DatabaseSeller.getSellerById(10),50000,FoodCategory.Rice));
-        DatabaseFood.addFood(new Food(11,"kopi item",DatabaseSeller.getSellerById(11),50000,FoodCategory.Coffee));
-        System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Rice));
-        System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Coffee));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId(),"nasi ijo",DatabaseSeller.getSellerById(4),50000,FoodCategory.Rice));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId(),"nasi merah",DatabaseSeller.getSellerById(4),50000,FoodCategory.Rice));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId(),"kopi item",DatabaseSeller.getSellerById(4),50000,FoodCategory.Coffee));
+        for (Food food : DatabaseFood.getFoodByCategory(FoodCategory.Rice)){
+            System.out.println(food.getName());
+        }
+        for (Food food : DatabaseFood.getFoodByCategory(FoodCategory.Coffee)){
+            System.out.println(food.getName());
+        }
 
     }
 }

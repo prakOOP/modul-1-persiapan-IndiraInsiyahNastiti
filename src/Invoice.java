@@ -28,7 +28,7 @@ public abstract class Invoice
       this.id=id;
       this.foods = foods;
       this.customer=customer;
-      this.invoiceStatus=invoiceStatus.Ongoing;
+      this.invoiceStatus= InvoiceStatus.Ongoing;
       this.date = setDate(Calendar.getInstance());
     }
 

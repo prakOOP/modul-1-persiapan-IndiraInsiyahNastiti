@@ -6,10 +6,7 @@
       <change beforePath="$PROJECT_DIR$/src/CashInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CashInvoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CashlessInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CashlessInvoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseFood.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabasePromo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabasePromo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseSeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseSeller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Food.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JFood.java" afterDir="false" />
     </list>
@@ -58,22 +55,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="559" key="GridCell.Tab.0.bottom" timestamp="1585830390847">
+    <state width="1237" height="559" key="GridCell.Tab.0.bottom" timestamp="1585915095569">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="559" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1585830390847" />
-    <state width="1237" height="559" key="GridCell.Tab.0.center" timestamp="1585830390847">
+    <state width="1237" height="559" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1585915095569" />
+    <state width="1237" height="559" key="GridCell.Tab.0.center" timestamp="1585915095569">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="559" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1585830390847" />
-    <state width="1237" height="559" key="GridCell.Tab.0.left" timestamp="1585830390847">
+    <state width="1237" height="559" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1585915095569" />
+    <state width="1237" height="559" key="GridCell.Tab.0.left" timestamp="1585915095569">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="559" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1585830390847" />
-    <state width="1237" height="559" key="GridCell.Tab.0.right" timestamp="1585830390847">
+    <state width="1237" height="559" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1585915095569" />
+    <state width="1237" height="559" key="GridCell.Tab.0.right" timestamp="1585915095569">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="559" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1585830390847" />
+    <state width="1237" height="559" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1585915095569" />
+    <state x="349" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1585909995055">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="349" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1585909995055" />
     <state x="521" y="159" key="run.anything.popup" timestamp="1585829205382">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
