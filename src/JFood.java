@@ -1,3 +1,5 @@
+import java.awt.image.DataBufferInt;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.zip.DeflaterOutputStream;
 
@@ -119,19 +121,26 @@ public class JFood
 
         System.out.println("CASE STUDY MODUL 6");
         DatabaseSeller.addSeller(new Seller(4,"manda","manda@gmail.com","087383846837",location1));
-        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId(), "marw", "marw@gmail.com", "apalaH12"));
-        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId(), "marw", "marw@gmail.com", "apalaH13"));
-        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId(), "dhil", "dhil@gmail.com", "apalaH14"));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId()+1, "marw", "marw@gmail.com", "apalaH12"));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId()+1, "marw", "marw@gmail.com", "apalaH13"));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId()+1, "dhil", "dhil@gmail.com", "apalaH14"));
         System.out.println(DatabaseCustomer.getCustomerDatabase());
-        DatabaseFood.addFood(new Food(DatabaseFood.getLastId(),"nasi ijo",DatabaseSeller.getSellerById(4),50000,FoodCategory.Rice));
-        DatabaseFood.addFood(new Food(DatabaseFood.getLastId(),"nasi merah",DatabaseSeller.getSellerById(4),50000,FoodCategory.Rice));
-        DatabaseFood.addFood(new Food(DatabaseFood.getLastId(),"kopi item",DatabaseSeller.getSellerById(4),50000,FoodCategory.Coffee));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1,"nasi ijo",DatabaseSeller.getSellerById(4),50000,FoodCategory.Rice));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1,"nasi merah",DatabaseSeller.getSellerById(4),50000,FoodCategory.Rice));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1,"kopi item",DatabaseSeller.getSellerById(4),50000,FoodCategory.Coffee));
         for (Food food : DatabaseFood.getFoodByCategory(FoodCategory.Rice)){
             System.out.println(food.getName());
         }
         for (Food food : DatabaseFood.getFoodByCategory(FoodCategory.Coffee)){
             System.out.println(food.getName());
         }
+        System.out.println("POST TEST MODUL 6");
+        DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId()+1, "HUTPROMO", 5000, 10000, false));
+        DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId()+1, "HUTPROMO", 2000, 10000, true));
+        for (Promo promo : DatabasePromo.getPromoDatabase()){
+            System.out.println(promo.getCode());
+        }
+
 
     }
 }
