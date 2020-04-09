@@ -24,7 +24,7 @@ public class CashlessInvoice extends Invoice
         super(id,foods,customer);
         
     }
-    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus, Promo promo)
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, Promo promo)
     {
         // initialise instance variables
         super(id,foods,customer);
@@ -34,7 +34,6 @@ public class CashlessInvoice extends Invoice
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param    a sample parameter for a method
      * @return    the sum of x and y
      */
     public PaymentType getPaymentType()
@@ -50,12 +49,13 @@ public class CashlessInvoice extends Invoice
         this.promo=promo;
     }
     public void setTotalPrice(){
+        /**totalPrice = 0;
         if (promo!=null && promo.getActive()==true && (totalPrice)>promo.getMinPrice()){
             this.totalPrice=totalPrice-promo.getDiscount();
         }
         else{
             this.totalPrice=totalPrice;
-        }
+        }**/
 
     }
     public String toString(){

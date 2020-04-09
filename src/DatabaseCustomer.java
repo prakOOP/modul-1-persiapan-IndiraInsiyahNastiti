@@ -22,30 +22,27 @@ public class DatabaseCustomer
         // put your code here
         return lastId;
     }
-    public static Customer getCustomerById(int id)
-    {
+    public static Customer getCustomerById(int id) throws CustomerNotFoundException {
         for(Customer customer : CUSTOMER_DATABASE){
             if (customer.getId() == id){
                 return customer;
             }
         }
-        return null;
+        throw new CustomerNotFoundException(id);
     }
-    public static boolean removeCustomer(int id)
-    {
+    public static boolean removeCustomer(int id) throws CustomerNotFoundException {
         for (Customer customer : CUSTOMER_DATABASE){
             if (customer.getId() == id){
                 CUSTOMER_DATABASE.remove(customer);
                 return true;
             }
         }
-        return false;
+        throw new CustomerNotFoundException(id);
     }
-    public static boolean addCustomer(Customer customer)
-    {
+    public static boolean addCustomer(Customer customer) throws EmailAlreadyExistsException {
         for ( Customer _customer : CUSTOMER_DATABASE) {
             if (_customer.getEmail().equals(customer.getEmail())){
-                return false;
+                throw new EmailAlreadyExistsException(customer);
             }
         }
         CUSTOMER_DATABASE.add(customer);

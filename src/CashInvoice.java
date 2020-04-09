@@ -47,11 +47,12 @@ public class CashInvoice extends Invoice {
     }
 
     public void setTotalPrice() {
+    /**
         if (deliveryFee != 0) {
             this.totalPrice = totalPrice + getDeliveryFee();
         } else {
             this.totalPrice = totalPrice;
-        }
+        }**/
     }
 
     public String toString() {

@@ -55,7 +55,7 @@ public class Promo
     public boolean getActive()
     {
         // put your code here
-        return active;
+        return true;
     }
     public void setId(int id)
     {

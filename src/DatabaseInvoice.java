@@ -36,14 +36,13 @@ public class DatabaseInvoice {
     public static boolean addInvoice(Invoice invoice)
     {
         for (Invoice _invoice : INVOICE_DATABASE){
-            if(_invoice.getInvoiceStatus()!=InvoiceStatus.Ongoing){
-                INVOICE_DATABASE.add(_invoice);
-                lastId = _invoice.getId();
-                return true;
-
+            if(_invoice.getInvoiceStatus().equals(InvoiceStatus.Ongoing) && _invoice.getCustomer().getId() == invoice.getCustomer().getId()){
+                return false;
             }
         }
-        return false;
+        INVOICE_DATABASE.add(invoice);
+        lastId = invoice.getId();
+        return true;
 
     }
     public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus) {
