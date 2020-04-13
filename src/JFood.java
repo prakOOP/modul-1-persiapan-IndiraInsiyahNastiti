@@ -252,25 +252,39 @@ public class JFood {
         }
         try{
             DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1,fl, DatabaseCustomer.getCustomerById(1), DatabasePromo.getPromoByCode("DISKON")));
-        }catch (CustomerNotFoundException except){
+        }catch (CustomerNotFoundException | OngoingInvoiceAlreadyExistsException except){
             System.out.println(except.getMessage());
         }
         try{
             DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1,fl, DatabaseCustomer.getCustomerById(2), DatabasePromo.getPromoByCode("DISKON")));
-        }catch (CustomerNotFoundException except){
+        }catch (CustomerNotFoundException | OngoingInvoiceAlreadyExistsException except){
             System.out.println(except.getMessage());
         }
         try {
             DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId() + 1, fl, DatabaseCustomer.getCustomerById(3), DatabasePromo.getPromoByCode("DISKON")));
-        }catch (CustomerNotFoundException except){
+        }catch (CustomerNotFoundException | OngoingInvoiceAlreadyExistsException except){
             System.out.println(except.getMessage());
         }
 
-        for (Invoice invoice: DatabaseInvoice.getInvoiceDatabase()){
+        /**for (Invoice invoice: DatabaseInvoice.getInvoiceDatabase()){
                 new Thread(new PriceCalculator(invoice)).start();
-            }
-        
-
+            }**/
+        System.out.println("POST TEST MODUL 7");
+        try{
+            DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId(),fl, DatabaseCustomer.getCustomerById(3), DatabasePromo.getPromoByCode("DISKON")));
+        }catch (CustomerNotFoundException | OngoingInvoiceAlreadyExistsException except) {
+            System.out.println(except.getMessage());
+        }
+        try{
+            DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1,fl, DatabaseCustomer.getCustomerById(3), DatabasePromo.getPromoByCode("DISKON")));
+        }catch (CustomerNotFoundException | OngoingInvoiceAlreadyExistsException except) {
+            System.out.println(except.getMessage());
+        }
+        try {
+            DatabaseInvoice.getInvoiceById(10);
+        }catch (InvoiceNotFoundException except){
+            System.out.println((except.getMessage()));
+        }
     }
 }
 
