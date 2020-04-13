@@ -18,7 +18,7 @@ public class JFood {
      * berisi deklarasi pembuatan Objek/Instance serta pemanggilan fungsi/method printData()
      * untuk menampilkan hasil eksekusi program ke interface user.
      */
-    public static void main(String[] args) throws EmailAlreadyExistsException, PromoCodeAlreadyExistsException, SellerNotFoundException, CustomerNotFoundException, FoodNotFoundException, PromoNotFoundException {
+    public static void main(String[] args) {
         // CS MODUL 2
         //System.out.println("CS MODUL 2");
         Location location1 = new Location("Bogor", "Jawa Barat", "hujan"); //membuat objek location1 dari class Location
@@ -169,21 +169,44 @@ public class JFood {
         System.out.println("CS MODUL 7");
         try {
             DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "marw", "marw@gmail.com", "apalaH12"));
+        }catch (EmailAlreadyExistsException except){
+            System.out.println(except.getMessage());
+        }
+        try {
             DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "dhil", "dhil@gmail.com", "apalaH14"));
+        }catch (EmailAlreadyExistsException except){
+            System.out.println(except.getMessage());
+        }
+        try {
             DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "nana", "nana@gmail.com", "apalaH15"));
+        }catch (EmailAlreadyExistsException except){
+            System.out.println(except.getMessage());
+        }
+        try {
             DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "fan", "marw@gmail.com", "apalaH13"));
         }catch (EmailAlreadyExistsException except){
             System.out.println(except.getMessage());
         }
         try {
             DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId() + 1, "HUTPROMO", 5000, 50000, true));
+        }catch (PromoCodeAlreadyExistsException except){
+            System.out.println(except.getMessage());
+        }
+        try {
             DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId() + 1, "HUTPROMO", 6000, 60000, true));
         }catch (PromoCodeAlreadyExistsException except){
             System.out.println(except.getMessage());
         }
-        DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "nasi ijo", DatabaseSeller.getSellerById(4), 50000, FoodCategory.Rice));
-        DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "nasi merah", DatabaseSeller.getSellerById(4), 50000, FoodCategory.Rice));
-
+        try {
+            DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "nasi ijo", DatabaseSeller.getSellerById(4), 50000, FoodCategory.Rice));
+        }catch (SellerNotFoundException except){
+            System.out.println(except.getMessage());
+        }
+        try {
+            DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "nasi merah", DatabaseSeller.getSellerById(4), 50000, FoodCategory.Rice));
+        }catch (SellerNotFoundException except){
+            System.out.println(except.getMessage());
+        }
         try {
             DatabasePromo.getPromoById(5);
         }catch (PromoNotFoundException except){
@@ -217,18 +240,36 @@ public class JFood {
             System.out.println();
         }
         ArrayList<Food> fl = new ArrayList<Food>();
-        fl.add(DatabaseFood.getFoodById(1));
-        fl.add(DatabaseFood.getFoodById(2));
+        try {
+            fl.add(DatabaseFood.getFoodById(1));
+        }catch (FoodNotFoundException except){
+            System.out.println((except.getMessage()));
+        }
+        try {
+            fl.add(DatabaseFood.getFoodById(2));
+        }catch (FoodNotFoundException except){
+            System.out.println((except.getMessage()));
+        }
+        try{
+            DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1,fl, DatabaseCustomer.getCustomerById(1), DatabasePromo.getPromoByCode("DISKON")));
+        }catch (CustomerNotFoundException except){
+            System.out.println(except.getMessage());
+        }
+        try{
+            DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1,fl, DatabaseCustomer.getCustomerById(2), DatabasePromo.getPromoByCode("DISKON")));
+        }catch (CustomerNotFoundException except){
+            System.out.println(except.getMessage());
+        }
+        try {
+            DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId() + 1, fl, DatabaseCustomer.getCustomerById(3), DatabasePromo.getPromoByCode("DISKON")));
+        }catch (CustomerNotFoundException except){
+            System.out.println(except.getMessage());
+        }
 
-        DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1,fl, DatabaseCustomer.getCustomerById(1), DatabasePromo.getPromoByCode("DISKON")));
-        DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1,fl, DatabaseCustomer.getCustomerById(2), DatabasePromo.getPromoByCode("DISKON")));
-        DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1,fl, DatabaseCustomer.getCustomerById(3), DatabasePromo.getPromoByCode("DISKON")));
-
-        while (DatabaseInvoice.getInvoiceDatabase()!=null){
-            for (Invoice invoice: DatabaseInvoice.getInvoiceDatabase()){
+        for (Invoice invoice: DatabaseInvoice.getInvoiceDatabase()){
                 new Thread(new PriceCalculator(invoice)).start();
             }
-        }
+        
 
     }
 }

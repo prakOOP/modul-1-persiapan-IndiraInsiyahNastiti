@@ -3,20 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5acf1ac0-7c09-4b14-a9d1-59f974ca4ac9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JFood/CashInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JFood/CashInvoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JFood/CashlessInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JFood/CashlessInvoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JFood/DatabaseInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JFood/DatabaseInvoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JFood/JFood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JFood/JFood.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JFood/Promo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JFood/Promo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CashInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CashInvoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CashlessInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CashlessInvoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseFood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseInvoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabasePromo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabasePromo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseSeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseSeller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JFood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Promo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Promo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,26 +65,26 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="701" y="266" width="394" height="220" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.720@0.0.1280.720" timestamp="1585917145318" />
-    <state width="1237" height="554" key="GridCell.Tab.0.bottom" timestamp="1586431586857">
+    <state width="1237" height="554" key="GridCell.Tab.0.bottom" timestamp="1586765387138">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="554" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1586431586857" />
-    <state width="1237" height="554" key="GridCell.Tab.0.center" timestamp="1586431586857">
+    <state width="1237" height="554" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1586765387138" />
+    <state width="1237" height="554" key="GridCell.Tab.0.center" timestamp="1586765387138">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="554" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1586431586857" />
-    <state width="1237" height="554" key="GridCell.Tab.0.left" timestamp="1586431586857">
+    <state width="1237" height="554" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1586765387138" />
+    <state width="1237" height="554" key="GridCell.Tab.0.left" timestamp="1586765387138">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="554" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1586431586857" />
-    <state width="1237" height="554" key="GridCell.Tab.0.right" timestamp="1586431586857">
+    <state width="1237" height="554" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1586765387138" />
+    <state width="1237" height="554" key="GridCell.Tab.0.right" timestamp="1586765387138">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="554" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1586431586857" />
-    <state x="349" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1586426636074">
+    <state width="1237" height="554" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1586765387138" />
+    <state x="349" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1586765078383">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="349" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1586426636074" />
+    <state x="349" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1586765078383" />
     <state x="521" y="159" key="run.anything.popup" timestamp="1586428228565">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
