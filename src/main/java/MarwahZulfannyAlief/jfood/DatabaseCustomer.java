@@ -50,6 +50,14 @@ public class DatabaseCustomer
         lastId = customer.getId();
         return true;
     }
+    public static Customer customerLogin(String email, String password){
+        for ( Customer _customer : CUSTOMER_DATABASE) {
+            if(_customer.getEmail().equals(email)&&_customer.getPassword().equals(password)){
+                return _customer;
+            }
+        }
+        return null;
+    }
 
     /**
      * An example of a method - replace this comment with your own

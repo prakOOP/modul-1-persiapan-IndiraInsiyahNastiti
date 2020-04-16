@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author (your name)
  * @version (a version number or a date)
  */
+
 @SpringBootApplication
 public class JFood {
 
@@ -23,10 +24,38 @@ public class JFood {
      * untuk menampilkan hasil eksekusi program ke interface user.
      */
     public static void main(String[] args) {
+        Location location1 = new Location("Bogor", "Jawa Barat", "hujan"); //membuat objek location1 dari class Location
+        Location location2 = new Location("Padang", "Sumatera Barat", "rendang"); //membuat objek location2 dari class Location
+        Location location3 = new Location("Jakarta", "DKI Jakarta", "macet"); //membuat objek location3 dari class Location
+
+        DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "manda", "manda@gmail.com", "087383846837", location1));
+        DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "milo", "milo@gmail.com", "087383846876", location2));
+        DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "duto", "duto@gmail.com", "087383846893", location3));
+
+        try {
+            DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "nasi ijo", DatabaseSeller.getSellerById(1), 50000, FoodCategory.Rice));
+        }catch (SellerNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "nasi merah", DatabaseSeller.getSellerById(2), 50000, FoodCategory.Rice));
+        }catch (SellerNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "kopi item", DatabaseSeller.getSellerById(3), 50000, FoodCategory.Coffee));
+        }catch (SellerNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "kopi susu", DatabaseSeller.getSellerById(1), 50000, FoodCategory.Coffee));
+        }catch (SellerNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+
         SpringApplication.run(JFood.class, args);
         // CS MODUL 2
         //System.out.println("CS MODUL 2");
-        //Location location1 = new Location("Bogor", "Jawa Barat", "hujan"); //membuat objek location1 dari class Location
         /**Seller seller1 = new Seller(1, "nadhila", "nadhila@gmail.com", "0897283627", location1); //membuat objek seller1 dari class Seller
         Food food1 = new Food(1, "Pisang", seller1, 10000, FoodCategory.Beverages); //membuat objek food1 dari class Food
         //Customer customer1 = new Customer(1,"fanny","fanny@gmail.com","12345","27/02/2020"); //membuat objek customer1 dari class Customer
@@ -123,7 +152,6 @@ public class JFood {
         //System.out.println(cashinvoice2.toString());
 
         System.out.println("CASE STUDY MODUL 6");
-        DatabaseSeller.addSeller(new Seller(4, "manda", "manda@gmail.com", "087383846837", location1));
         /**DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "marw", "marw@gmail.com", "apalaH12"));
         DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "marw", "marw@gmail.com", "apalaH13"));
         DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "dhil", "dhil@gmail.com", "apalaH14"));
