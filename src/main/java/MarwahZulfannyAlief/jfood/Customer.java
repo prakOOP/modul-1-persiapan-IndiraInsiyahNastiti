@@ -19,7 +19,7 @@ public class Customer
     private String name;
     private String email;
     private String password;
-    private Calendar joinDate;
+    private Calendar joinDate = Calendar.getInstance();
     
 
     /**
