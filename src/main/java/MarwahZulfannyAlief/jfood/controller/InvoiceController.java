@@ -2,6 +2,7 @@ package MarwahZulfannyAlief.jfood.controller;
 import MarwahZulfannyAlief.jfood.*;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 @RequestMapping("/invoice")
@@ -59,26 +60,59 @@ public class InvoiceController {
         return false;
     }
 
-   /** @RequestMapping(value = "/createCashInvoice", method = RequestMethod.POST)
+    @RequestMapping(value = "/createCashInvoice", method = RequestMethod.POST)
     public Invoice addCashInvoice(@RequestParam(value = "foodIdList")ArrayList<Integer> foodIdList,
                           @RequestParam(value = "customerId")int customerId,
                           @RequestParam(value = "deliveryFee")int deliveryFee){
 
-        try {
+
             ArrayList<Food> foods = new ArrayList<>();
-            for (int foodId : foodIdList.get()) {
-                foods.add(DatabaseFood.getFoodById());
+            for (int foodId : foodIdList) {
+                try {
+                    foods.add(DatabaseFood.getFoodById(foodId));
+                } catch (FoodNotFoundException e) {
+                    e.getMessage();
+                }
             }
-            CashInvoice cashInvoice = new CashInvoice(DatabaseInvoice.getLastId() + 1,foodIdList,DatabaseCustomer.getCustomerById(customerId),deliveryFee);
-        }catch (CustomerNotFoundException e){
+        CashInvoice cashInvoice = null;
+        try {
+            cashInvoice = new CashInvoice(DatabaseInvoice.getLastId() + 1,foods, DatabaseCustomer.getCustomerById(customerId),deliveryFee);
+        } catch (CustomerNotFoundException e) {
             e.getMessage();
         }
         try {
-            DatabasePromo.addPromo(promo);
-            DatabasePromo.getPromoByCode(promo.getCode());
-            return promo;
+                DatabaseInvoice.addInvoice(cashInvoice);
+                return cashInvoice;
+            } catch (OngoingInvoiceAlreadyExistsException e) {
+                e.getMessage();
+            }
+        return null;
+    }
+
+   /** @RequestMapping(value = "/createCashlessInvoice", method = RequestMethod.POST)
+    public Invoice addCashInvoice(@RequestParam(value = "foodIdList")ArrayList<Integer> foodIdList,
+                                  @RequestParam(value = "customerId")int customerId,
+                                  @RequestParam(value = "promoCode")String promoCode){
+
+
+        ArrayList<Food> foods = new ArrayList<>();
+        for (int foodId : foodIdList) {
+            try {
+                foods.add(DatabaseFood.getFoodById(foodId));
+            } catch (FoodNotFoundException e) {
+                e.getMessage();
+            }
         }
-        catch (PromoCodeAlreadyExistsException e){
+        CashInvoice cashInvoice = null;
+        try {
+            cashInvoice = new CashInvoice(DatabaseInvoice.getLastId() + 1,foods, DatabaseCustomer.getCustomerById(customerId),deliveryFee);
+        } catch (CustomerNotFoundException e) {
+            e.getMessage();
+        }
+        try {
+            DatabaseInvoice.addInvoice(cashInvoice);
+            return cashInvoice;
+        } catch (OngoingInvoiceAlreadyExistsException e) {
             e.getMessage();
         }
         return null;
