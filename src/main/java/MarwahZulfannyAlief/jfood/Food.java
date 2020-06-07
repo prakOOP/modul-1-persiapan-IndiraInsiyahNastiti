@@ -13,6 +13,7 @@ public class Food
     private Seller seller;
     private int price;
     private FoodCategory category;
+    private FoodCategories categories;
    
 
     /**
@@ -27,6 +28,16 @@ public class Food
         this.seller=seller;
         this.price=price;
         this.category=category;
+    }
+
+    public Food(int id, String name, Seller seller, int price, FoodCategories category)
+    {
+        // initialise instance variables
+        this.id=id;
+        this.name=name;
+        this.seller=seller;
+        this.price=price;
+        this.categories=category;
     }
 
     /**
@@ -65,6 +76,14 @@ public class Food
     public FoodCategory getCategory()
     {
         return category;
+    }
+
+    public FoodCategories getCategories() {
+        return categories;
+    }
+
+    public void setCategories(FoodCategories categories) {
+        this.categories = categories;
     }
     
     public void setId (int id)

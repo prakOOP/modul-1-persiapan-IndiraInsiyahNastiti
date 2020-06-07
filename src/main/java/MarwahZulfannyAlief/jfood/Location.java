@@ -7,7 +7,10 @@ package MarwahZulfannyAlief.jfood;
  */
 public class Location
 {
+
+
     // instance variables - replace the example below with your own
+    int id;
     private String province;
     private String description;
     private String city;
@@ -16,9 +19,10 @@ public class Location
      * Constructor untuk objects dari class Location
      * @param city,province,description
      */
-    public Location(String city, String province, String description)
+    public Location(int id, String city, String province, String description)
     {
         // initialise instance variables
+        this.id=id;
         this.city=city;
         this.province=province;
         this.description=description;
@@ -49,6 +53,13 @@ public class Location
     {
         // put your code here
         return description;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
      public void setProvince(String province)
     {

@@ -20,6 +20,7 @@ public class Customer
     private String email;
     private String password;
     private Calendar joinDate = Calendar.getInstance();
+    private Date date;
     
 
     /**
@@ -51,6 +52,14 @@ public class Customer
        this.name=name;
        setEmail(email);
        setPassword(password);
+    }
+
+    public Customer(int id, String name, String email, String password, Date date) {
+        this.id=id;
+        this.name=name;
+        setEmail(email);
+        setPassword(password);
+        this.date=date;
     }
 
     /**
@@ -101,7 +110,10 @@ public class Customer
     {
         return joinDate;
     }
-     /**
+
+     public Date getDate(){return date;}
+
+    /**
      * untuk memberikan nilai pada variable id
      * @params id
      */

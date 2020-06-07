@@ -24,24 +24,31 @@ public class JFood {
      * untuk menampilkan hasil eksekusi program ke interface user.
      */
     public static void main(String[] args) {
-        Location location1 = new Location("Bogor", "Jawa Barat", "hujan"); //membuat objek location1 dari class Location
-        Location location2 = new Location("Padang", "Sumatera Barat", "rendang"); //membuat objek location2 dari class Location
-        Location location3 = new Location("Jakarta", "DKI Jakarta", "macet"); //membuat objek location3 dari class Location
-
+        Location location1 = new Location(1,"Bogor", "Jawa Barat", "hujan"); //membuat objek location1 dari class Location
         DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "manda", "manda@gmail.com", "087383846837", location1));
-        DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "milo", "milo@gmail.com", "087383846876", location2));
-        DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "duto", "duto@gmail.com", "087383846893", location3));
-
         try {
             DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "nasi ijo", DatabaseSeller.getSellerById(1), 50000, FoodCategory.Rice));
         }catch (SellerNotFoundException e){
             System.out.println(e.getMessage());
         }
         try {
-            DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "nasi merah", DatabaseSeller.getSellerById(2), 50000, FoodCategory.Rice));
+            DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "nasi merah", DatabaseSeller.getSellerById(1), 40000, FoodCategory.Rice));
         }catch (SellerNotFoundException e){
             System.out.println(e.getMessage());
         }
+        try {
+            DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId()+1,"hut",5000,10000,true));
+        } catch (PromoCodeAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        SpringApplication.run(JFood.class, args);
+        /**
+        Location location2 = new Location("Padang", "Sumatera Barat", "rendang"); //membuat objek location2 dari class Location
+        Location location3 = new Location("Jakarta", "DKI Jakarta", "macet"); //membuat objek location3 dari class Location
+
+        DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "milo", "milo@gmail.com", "087383846876", location2));
+        DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "duto", "duto@gmail.com", "087383846893", location3));
+
         try {
             DatabaseFood.addFood(new Food(DatabaseFood.getLastId() + 1, "kopi item", DatabaseSeller.getSellerById(3), 50000, FoodCategory.Coffee));
         }catch (SellerNotFoundException e){
@@ -52,8 +59,40 @@ public class JFood {
         }catch (SellerNotFoundException e){
             System.out.println(e.getMessage());
         }
+        try {
+            DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "marw", "marw@gmail.com", "apalaH12"));
+        }catch (EmailAlreadyExistsException except){
+            System.out.println(except.getMessage());
+        }
+        try {
+            DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "dhil", "dhil@gmail.com", "apalaH14"));
+        }catch (EmailAlreadyExistsException except){
+            System.out.println(except.getMessage());
+        }
+        try {
+            DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId() + 1, "nana", "nana@gmail.com", "apalaH15"));
+        }catch (EmailAlreadyExistsException except){
+            System.out.println(except.getMessage());
+        }
+        /**ArrayList<Food> fl = new ArrayList<Food>();
+        try {
+            fl.add(DatabaseFood.getFoodById(1));
+        }catch (FoodNotFoundException except){
+            System.out.println((except.getMessage()));
+        }
+        try {
+            fl.add(DatabaseFood.getFoodById(2));
+        }catch (FoodNotFoundException except){
+            System.out.println((except.getMessage()));
+        }
+        try {
+            DatabaseInvoice.addInvoice(new CashInvoice(DatabaseInvoice.getLastId()+1,fl,DatabaseCustomer.getCustomerById(1),5000));
+        } catch (OngoingInvoiceAlreadyExistsException e) {
+            e.getMessage();
+        } catch (CustomerNotFoundException e) {
+            e.getMessage();
+        }**/
 
-        SpringApplication.run(JFood.class, args);
         // CS MODUL 2
         //System.out.println("CS MODUL 2");
         /**Seller seller1 = new Seller(1, "nadhila", "nadhila@gmail.com", "0897283627", location1); //membuat objek seller1 dari class Seller

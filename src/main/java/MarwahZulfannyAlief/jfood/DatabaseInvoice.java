@@ -1,6 +1,12 @@
 package MarwahZulfannyAlief.jfood;
 import java.util.ArrayList;
 
+/**
+ * Class DatabaseInvoice berfungi untuk penyimpanan data invoice
+ *
+ * @author (Marwah Zulfanny Alief)
+ * @version (01/03/2020)
+ **/
 public class DatabaseInvoice {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList();
     private static int lastId=0;
@@ -29,9 +35,8 @@ public class DatabaseInvoice {
             if (invoice.getCustomer().getId() == customerId){
                 list.add(invoice);
             }
-            return list;
         }
-        return null;
+        return list;
     }
     public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException
     {

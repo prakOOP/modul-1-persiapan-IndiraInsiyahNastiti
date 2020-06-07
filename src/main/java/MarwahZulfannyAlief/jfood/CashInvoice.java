@@ -48,13 +48,15 @@ public class CashInvoice extends Invoice {
         this.deliveryFee = deliveryFee;
     }
 
+    @Override
     public void setTotalPrice() {
-    /**
-        if (deliveryFee != 0) {
-            this.totalPrice = totalPrice + getDeliveryFee();
-        } else {
-            this.totalPrice = totalPrice;
-        }**/
+
+        super.totalPrice=0;
+        for(Food foods:getFoods())
+        {
+            super.totalPrice = totalPrice + foods.getPrice();
+        }
+        super.totalPrice = super.totalPrice+deliveryFee;
     }
 
     public String toString() {
