@@ -1,0 +1,51 @@
+class Main {
+    public static void main(String[] args){
+
+        // membuat objek player
+
+        Kendaraan mobil = new Kendaraan();
+
+        // mengisi atribut player
+        mobil.name = "Ferrari";
+        mobil.kecepatan = 40;
+
+        // menjalankan method
+        mobil.jalan();
+
+        if(mobil.pelambatan()){
+            System.out.println("Kecepatan menurun!");
+        }
+
+        // mengisi atribut player
+        mobil.name = "Ferrari";
+        mobil.kecepatan = 10;
+
+        // menjalankan method
+        mobil.jalan();
+
+        if(mobil.pelambatan()){
+            System.out.println("Kecepatan menurun!");
+        }
+
+    }
+}
+==================================================================
+class Kendaraan {
+
+    // definisi atribut
+    String name;
+    int kecepatan;
+
+    // definisi method run
+    void jalan(){
+        System.out.println(name +" is running...");
+        System.out.println("Kecepatan: "+ kecepatan);
+    }
+
+    // definisi method pelambatan untuk mengecek penurunan kecepatan
+    boolean pelambatan(){
+        if(kecepatan <= 20) return true;
+        return false;
+    }
+
+}
